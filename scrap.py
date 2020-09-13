@@ -29,4 +29,4 @@ print(len(python_jobs))
 for p_job in python_jobs:
     link = p_job.find('a')['href']
     print(p_job.text.strip())
-    print(f"Apply gere: {link}\m")
+    print(f"Apply gere: {link}\n")
