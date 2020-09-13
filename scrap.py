@@ -17,8 +17,8 @@ for job_elem in job_elems:
     location_elem = job_elem.find('div', class_='location')
     if None in (title_elem, company_elem, location_elem):
         continue
-    print(title_elem)
-    print(company_elem)
-    print(location_elem)
+    print(title_elem.text.strip())
+    print(company_elem.text.strip())
+    print(location_elem.text.strip())
     print()
 
