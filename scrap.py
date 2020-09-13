@@ -15,6 +15,8 @@ for job_elem in job_elems:
     title_elem = job_elem.find('h2', class_='title')
     company_elem = job_elem.find('div', class_='company')
     location_elem = job_elem.find('div', class_='location')
+    if None in (title_elem, company_elem, location_elem):
+        continue
     print(title_elem)
     print(company_elem)
     print(location_elem)
