@@ -8,8 +8,6 @@ soup = BeautifulSoup(page.content, 'html.parser')
 
 results = soup.find(id='ResultsContainer')
 
-print(results.prettify())
-
 job_elems = results.find_all('section', class_='card-content')
 
 print('Printing job elem')
