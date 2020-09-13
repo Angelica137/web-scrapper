@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 
-URL = 'https://www.monster.com/jobs/search/?q=Software-Developer&where=Australia'
+URL = 'https://www.monster.co.uk/jobs/search/?q=Software-Engineer&where=London__2C-London&client=power&cy=uk&rad=20&intcid=swoop_Hero_Search'
 page = requests.get(URL)
 
 soup = BeautifulSoup(page.content, 'html.parser')
@@ -21,3 +21,12 @@ for job_elem in job_elems:
     print(location_elem.text.strip())
     print()
 
+
+python_jobs = results.find_all('h2', string=lambda text: 'python' in text.lower())
+
+print(len(python_jobs))
+
+for p_job in python_jobs:
+    link = p_job.find('a')['href']
+    print(p_job.text.strip())
+    print(f"Apply gere: {link}\m")
